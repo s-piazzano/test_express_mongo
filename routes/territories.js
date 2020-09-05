@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const {getTerrs} = require('../controllers/territories');
 
-router.get('/', (req, res) =>  {
-    res.status(200).json({status: 'success', message: 'Hello friend  😌'});
-});
+router
+    .route('/')
+    .get(getTerrs);
 
 module.exports = router;
