@@ -4,6 +4,13 @@ const morgan = require("morgan");
 
 const app = express();
 
+//Route file
+const territories = require('./routes/territories');
+
+//Mount Routes
+app.use('/api/v1/territories', territories);
+
+//Load Env variables
 dotenv.config({path:"./config/config.env"});
 
 const port = process.env.PORT;
